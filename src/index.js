@@ -11,6 +11,11 @@ app.post("/", express.json(), (request, response) => {
     request: request,
     response: response
   });
+  console.log("---------------------------------------------")
+  console.log(request)
+  console.log("---------------------------------------------")
+  console.log(response)
+  console.log("---------------------------------------------")
 
   function sendingResponse(agent) {
     agent.add("sending response from webhook server");
