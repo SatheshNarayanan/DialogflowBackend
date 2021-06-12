@@ -50,7 +50,7 @@ app.post("/", express.json(), (request, response) => {
 
   const intentMap = new Map();
 
-  intentMap.set("issues", customPayload);
+  intentMap.set("issues", sendingResponse);
 
   agent.handleRequest(intentMap);
 });
