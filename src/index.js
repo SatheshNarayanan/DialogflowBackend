@@ -19,36 +19,29 @@ app.post("/", express.json(), (request, response) => {
     agent.add("sending response from webhook server");
   }
   function customPayload(agent){
-    const payload = { "payload" : {
-      "richContent": [
-          [
-            {
-              "type": "list",
-              "title": "List item 1 title",
-              "subtitle": "List item 1 subtitle",
-              "event": {
-                "name": "",
-                "languageCode": "",
-                "parameters": {}
+    const payload = {
+      messages: [
+        {
+          payload: {
+            messages: [
+              {
+                speech: 'here are some quick links for your convenience.',
+                linkmessage: [{
+                  message: 'google',
+                  link: 'www.google.com'
+                }, {
+                  message: 'yahoo',
+                  link: 'www.yahoo.co.in'
+                }],
+                button: [{
+                  buttonname: 'more page'
+                }]
               }
-            },
-            {
-              "type": "divider"
-            },
-            {
-              "type": "list",
-              "title": "List item 2 title",
-              "subtitle": "List item 2 subtitle",
-              "event": {
-                "name": "",
-                "languageCode": "",
-                "parameters": {}
-              }
-            }
-          ]
-        ]
-      }
-    }
+            ]
+          }
+        }
+      ]
+    };
         
       agent.add( new dfff.Payload(agent.UNSPECIFIED, payload, {sendAsMessage : true, rawPayload : false}))
     }
