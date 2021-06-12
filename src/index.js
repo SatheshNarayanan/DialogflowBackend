@@ -6,7 +6,7 @@ const dfff = require("dialogflow-fulfillment");
 const app = express();
 
 app.post("/", express.json(), (request, response) => {
-  const agent = dfff.WebhookClient({
+  const agent = new dfff.WebhookClient({
     request: request,
     response: response
   });
