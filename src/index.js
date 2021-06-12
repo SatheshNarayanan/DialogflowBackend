@@ -12,9 +12,7 @@ app.post("/", express.json(), (request, response) => {
     response: response
   });
   console.log("---------------------------------------------")
-  console.log(request)
-  console.log("---------------------------------------------")
-  console.log(response)
+  console.log(request?.body?.queryResult, request?.body?.originalDetectIntentRequest)
   console.log("---------------------------------------------")
 
   function sendingResponse(agent) {
@@ -55,7 +53,7 @@ app.post("/", express.json(), (request, response) => {
 
   const intentMap = new Map();
 
-  intentMap.set("issues", sendingResponse);
+  intentMap.set("issues", customPayload);
 
   agent.handleRequest(intentMap);
 });
