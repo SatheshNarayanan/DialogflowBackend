@@ -19,8 +19,8 @@ app.post("/", express.json(), (request, response) => {
     agent.add("sending response from webhook server");
   }
   function customPayload(agent){
-    const payload = {
-        "richContent": [
+    const payload = { "payload" : {
+      "richContent": [
           [
             {
               "type": "list",
@@ -48,6 +48,8 @@ app.post("/", express.json(), (request, response) => {
           ]
         ]
       }
+    }
+        
       agent.add( new dfff.Payload(agent.UNSPECIFIED, payload, {sendAsMessage : true, rawPayload : false}))
     }
 
