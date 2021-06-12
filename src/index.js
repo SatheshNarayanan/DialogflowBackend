@@ -16,7 +16,7 @@ app.post("/", express.json(), (request, response) => {
   }
   const intentMap = new Map();
 
-  intentMap.set("Issue_type", sendingResponse);
+  intentMap.set("issues", sendingResponse);
 
   agent.handleRequest(intentMap);
 });
