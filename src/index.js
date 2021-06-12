@@ -43,7 +43,7 @@ app.post("/", express.json(), (request, response) => {
       ]
     };
         
-      agent.add( new dfff.Payload(agent.UNSPECIFIED, payload, {sendAsMessage : true, rawPayload : false}))
+      agent.add( new dfff.Payload(agent.UNSPECIFIED, payload, {sendAsMessage : true, rawPayload : true}))
     }
 
   const intentMap = new Map();
