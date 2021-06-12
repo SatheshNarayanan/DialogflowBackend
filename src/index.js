@@ -48,16 +48,16 @@ app.post("/", express.json(), (request, response) => {
           ]
         ]
       }
-      agent.add( new dfff.Payload(agent.UNSPECIFIED, payload, {sendAsMessage : true, rawPayload : true}))
+      agent.add( new dfff.Payload(agent.UNSPECIFIED, payload, {sendAsMessage : true, rawPayload : false}))
     }
 
   const intentMap = new Map();
 
   intentMap.set("issues", customPayload);
 
-  console.log("---------------------------------------------")
-  console.log(response)
-  console.log("---------------------------------------------")
+  // console.log("---------------------------------------------")
+  // console.log(response)
+  // console.log("---------------------------------------------")
 
   agent.handleRequest(intentMap);
 });
