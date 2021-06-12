@@ -7,8 +7,8 @@ const app = express();
 
 app.post("/", express.json(), (request, response) => {
   const agent = dfff.WebhookClient({
-    request,
-    response
+    request: request,
+    response: response
   });
 
   function sendingResponse(agent) {
