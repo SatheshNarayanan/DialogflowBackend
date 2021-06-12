@@ -11,9 +11,9 @@ app.post("/", express.json(), (request, response) => {
     request: request,
     response: response
   });
-  console.log("---------------------------------------------")
-  console.log(request?.body?.queryResult, request?.body?.originalDetectIntentRequest)
-  console.log("---------------------------------------------")
+  // console.log("---------------------------------------------")
+  // console.log(request?.body?.queryResult, request?.body?.originalDetectIntentRequest)
+  // console.log("---------------------------------------------")
 
   function sendingResponse(agent) {
     agent.add("sending response from webhook server");
@@ -55,6 +55,10 @@ app.post("/", express.json(), (request, response) => {
 
   intentMap.set("issues", customPayload);
 
+  console.log("---------------------------------------------")
+  console.log(response)
+  console.log("---------------------------------------------")
+
   agent.handleRequest(intentMap);
 });
 
@@ -65,3 +69,5 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT || 8080, () => {
   console.log("Server is up and running!!");
 });
+
+
