@@ -16,7 +16,7 @@ app.post("/", express.json(), (request, response) => {
     agent.add("sending response from webhook server");
   }
   function customPayload(agent){
-    const customPayload = {
+    const payload = {
         "richContent": [
           [
             {
@@ -45,7 +45,7 @@ app.post("/", express.json(), (request, response) => {
           ]
         ]
       }
-      agent.add( new dfff.Payload(platform.UNSPECIFIED, customPayload, {sendAsMessage : true, rawPayload : true}))
+      agent.add( new dfff.Payload(platform.UNSPECIFIED, payload, {sendAsMessage : true, rawPayload : true}))
     }
 
   const intentMap = new Map();
