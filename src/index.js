@@ -17,7 +17,7 @@ app.post("/", express.json(), (request, response) => {
   }
   function customPayload(agent){
     const errorType = agent.context.get("awaiting_errortypes")
-    const error = errorType?.parameters?.errorTypes;
+    const error = errorType?.parameters?.errorTypes.toLowerCase();
     console.log("---------------------------------------------------")
     console.log(errorType)
     console.log("---------------------------------------------------")
@@ -97,7 +97,7 @@ app.post("/", express.json(), (request, response) => {
           ]
         ]
       }
-    } else if (error.includes("TRD") || error.includes("TCAL") || error.includes("TDS")){
+    } else if (error.includes("trd") || error.includes("tcal") || error.includes("tds")){
       payload = {
         "richContent": [
           [
