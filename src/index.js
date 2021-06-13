@@ -24,8 +24,8 @@ app.post("/", express.json(), (request, response) => {
     console.log("---------------------------------------------")
     console.log(errorType)
     console.log("---------------------------------------------")
-    const error = errorType?.parameters?.errorTypes
-    if (error.includes("supplier") && error.includes("invalid"))
+    const error = errorType?.parameters?.errorTypes;
+    //if (error.includes("supplier") && error.includes("invalid"))
     const payload = {
       "richContent": [
         [
