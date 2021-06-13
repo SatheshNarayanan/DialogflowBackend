@@ -22,7 +22,7 @@ app.post("/", express.json(), (request, response) => {
     console.log(errorType)
     console.log("---------------------------------------------------")
     let payload = {}
-    if (error.includes("supplier") && error.includes("invalid")){
+    if (error.includes("supplier") && (error.includes("invalid")|| error.includes("error") )){
       payload = {
       "richContent": [
         [
@@ -64,7 +64,7 @@ app.post("/", express.json(), (request, response) => {
         ]
       ]
     }
-    } else if (error.includes("invoice") && error.includes("creation")){
+    } else if (error.includes("invoice") && (error.includes("creation") || error.includes("error") ){
       payload = {
         "richContent": [
           [
