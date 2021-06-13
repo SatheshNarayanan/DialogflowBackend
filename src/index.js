@@ -24,13 +24,15 @@ app.post("/", express.json(), (request, response) => {
     console.log("---------------------------------------------")
     console.log(errorType)
     console.log("---------------------------------------------")
+    const error = errorType?.parameters?.errorTypes
+    if (error.includes("supplier") && error.includes("invalid"))
     const payload = {
       "richContent": [
         [
           {
             "type": "list",
-            "title": "List item 1 title",
-            "subtitle": "List item 1 subtitle",
+            "title": "It may not be mapped to any supplier group",
+            "subtitle": "Check if the Supplier is mapped to any Supplier group or not",
             "event": {
               "name": "",
               "languageCode": "",
@@ -42,8 +44,8 @@ app.post("/", express.json(), (request, response) => {
           },
           {
             "type": "list",
-            "title": "List item 2 title",
-            "subtitle": "List item 2 subtitle",
+            "title": "Effective date of the supplier may be closed",
+            "subtitle": "Go to 'Account rule defenition -> Suppleir account defenition' and check if the effective to date is closed",
             "event": {
               "name": "",
               "languageCode": "",
