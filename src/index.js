@@ -18,6 +18,9 @@ app.post("/", express.json(), (request, response) => {
   function customPayload(agent){
     const errorType = agent.context.get("awaiting_errortypes")
     const error = errorType?.parameters?.errorTypes;
+    console.log("---------------------------------------------------")
+    console.log(errorType)
+    console.log("---------------------------------------------------")
     let payload = {}
     if (error.includes("supplier") && error.includes("invalid")){
       payload = {
