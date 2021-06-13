@@ -30,27 +30,19 @@ app.post("/", express.json(), (request, response) => {
       "richContent": [
         [
           {
-            "type": "list",
-            "title": "It may not be mapped to any supplier group",
-            "subtitle": "Check if the Supplier is mapped to any Supplier group or not",
-            "event": {
-              "name": "",
-              "languageCode": "",
-              "parameters": {}
-            }
+            "type": "accordion",
+            "title": "Supplier group mapping issue",
+            "subtitle": "Need to check the Supplier group Mapping",
+            "text" : "The Supplier may not be mapped to any Supplier group"
           },
           {
             "type": "divider"
           },
           {
-            "type": "list",
-            "title": "Effective date of the supplier may be closed",
-            "subtitle": "Go to 'Account rule defenition -> Suppleir account defenition' and check if the effective to date is closed",
-            "event": {
-              "name": "",
-              "languageCode": "",
-              "parameters": {}
-            }
+            "type": "accordion",
+            "title": "Supplier may not be effective",
+            "subtitle": "Need to check if the Supplier is still effective or not",
+            "text" : "You can check the effective date of the supplier by traversing down the following path 'Account rule defenition -> Suppleir account defenition'"
           },
           {
             "type": "info",
