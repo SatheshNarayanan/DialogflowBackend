@@ -61,7 +61,7 @@ app.post("/", express.json(), (request, response) => {
         ]
       ]
     }
-    } else if (error.includes("invoice") && error.includes(",creation")){
+    } else if (error.includes("invoice") && error.includes("creation")){
       payload = {
         "richContent": [
           [
@@ -145,7 +145,31 @@ app.post("/", express.json(), (request, response) => {
           ]
         ]
       }
-    } 
+    } else {
+      payload = {
+        "richContent": [
+          [
+            {
+              "type": "info",
+              "title": "I'm not sure about the issue",
+              "subtitle": "Let me get some help from the technical team regarding this. Is it fine??",
+              "actionLink": "https://cloud.google.com/dialogflow/docs"
+            },
+            {
+              "type": "chips",
+              "options": [
+                {
+                  "text": "No",
+                },
+                {
+                  "text": "Yes please..",
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    }
     
         
       agent.add( new dfff.Payload(agent.UNSPECIFIED, payload, {sendAsMessage : true, rawPayload : true}))
