@@ -51,6 +51,23 @@ app.post("/", express.json(), (request, response) => {
               "languageCode": "",
               "parameters": {}
             }
+          },
+          {
+            "type": "info",
+            "title": "I hope you find these solutions useful!!",
+            "subtitle": "If you do you want me to inform the technical team regarding this issue?",
+            "actionLink": "https://cloud.google.com/dialogflow/docs"
+          },
+          {
+            "type": "chips",
+            "options": [
+              {
+                "text": "No",
+              },
+              {
+                "text": "Yes please..",
+              }
+            ]
           }
         ]
       ]
