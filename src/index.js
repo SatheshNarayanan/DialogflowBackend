@@ -64,7 +64,7 @@ app.post("/", express.json(), (request, response) => {
         ]
       ]
     }
-    } else if (error.includes("invoice") && (error.includes("creation") || error.includes("error") ){
+    } else if (error.includes("invoice") && (error.includes("creation") || error.includes("error")) ){
       payload = {
         "richContent": [
           [
