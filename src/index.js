@@ -19,7 +19,7 @@ app.post("/", express.json(), (request, response) => {
     const errorType = agent.context.get("awaiting_errortypes")
     const error = errorType?.parameters?.errorTypes.toLowerCase();
     console.log("---------------------------------------------------")
-    console.log(errorType)
+    console.log(errorType,request.body,errorType)
     console.log("---------------------------------------------------")
     let payload = {}
     if (error.includes("supplier") && (error.includes("invalid")|| error.includes("error") )){
