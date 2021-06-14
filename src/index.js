@@ -16,7 +16,7 @@ app.post("/", express.json(), (request, response) => {
     agent.add("sending response from webhook server");
   }
   function customPayload(agent){
-    const errorType = agent.context.get("awaiting_errortypes")
+    const errorType = request.body?.queryResult;
     const error = errorType?.parameters?.errorTypes.toLowerCase();
     console.log("---------------------------------------------------")
     console.log(errorType,request.body,errorType)
